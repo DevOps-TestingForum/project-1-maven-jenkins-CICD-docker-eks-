@@ -6,7 +6,6 @@ WORKDIR /app
 
 # Copy the pom.xml and source code into the container
 COPY pom.xml ./
-COPY src .
 
 # Step 2: Build the application using Maven (skip tests for faster build)
 RUN mvn clean install -DskipTests
