@@ -17,7 +17,7 @@ FROM tomcat:9-jdk11-openjdk-slim
 WORKDIR /usr/local/tomcat/webapps
 
 # Copy the WAR file from the Maven build stage to Tomcat's webapps folder
-COPY --from=build /app/target/*.war /my-app.war
+COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/my-app.war
 
 # Expose the new port (8081 instead of 8080 to avoid conflict with Jenkins)
 EXPOSE 8080
